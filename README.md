@@ -6,8 +6,8 @@
 
 **TODO LIST:**
 - [x] Design Screens On Figma
-- [x] Main View To Generate a New `URL SHORTED`
-- [x] Error 404 View
+- [ ] Main View To Generate a New `URL SHORTED`
+- [ ] Error 404 View
 - [ ] Upload To Netlify (Free Tier)
 
 **FIGMA WORKSPACE:**

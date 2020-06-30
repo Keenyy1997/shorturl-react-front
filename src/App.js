@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './components/button';
+//import Button from './components/button';
 import Title from './components/title';
 import Container from './components/container';
 import GetWords from './langs';
