@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import Button from './components/button';
+import Title from './components/title';
+import Container from './components/container';
+import GetWords from './langs';
 import './App.css';
+
+const Words = GetWords(localStorage.getItem('lang') ?? 'english'); 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container width={60}>
+        <Title> { Words } </Title>
+      </Container>
     </div>
   );
 }

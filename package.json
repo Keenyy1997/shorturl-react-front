@@ -1,6 +1,8 @@
 {
   "name": "shorturl-front",
   "version": "0.1.0",
+  "author": "keenyy1997",
+  "github": "https://github.com/keenyy1997",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
