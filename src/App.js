@@ -5,13 +5,16 @@ import Container from './components/container';
 import GetWords from './langs';
 import './App.css';
 
-const Words = GetWords(localStorage.getItem('lang') ?? 'english'); 
 
 function App() {
+  
+  const { mainTitle } = GetWords(localStorage.getItem('lang') ?? 'english'); 
+  console.log(`> Words`, mainTitle); 
+
   return (
     <div className="App">
       <Container width={60}>
-        <Title> { Words } </Title>
+        <Title color='white'> { mainTitle } </Title>
       </Container>
     </div>
   );

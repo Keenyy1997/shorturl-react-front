@@ -1,7 +1,7 @@
-const { Words } = require('./en');
+const DefaultWords = require('./en');
 
 /**
- * @returns { Words }
+ * @returns { DefaultWords.Words }
  */
 export default function (lang='english') {
   
@@ -10,7 +10,7 @@ export default function (lang='english') {
   switch(lang) {
     
     case 'english': default:
-      traductions = Words;
+      traductions = DefaultWords.Words;
     break;
   }
 

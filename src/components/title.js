@@ -8,6 +8,7 @@ export default class Title extends React.Component {
       fontSize: 46,
       fontFamily: 'Roboto',
       textAlign: 'left',
+      color: this.props.color ?? 'black',
     };
   
     return (
