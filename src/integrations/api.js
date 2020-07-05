@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.REACT_BASE_URL || 'https://shorturl-ts.herokuapp.com';
+export const BASE_URL = 'https://shorturl-ts.herokuapp.com';
 
 export async function PostRequest(url, body, headers = {}) {
   
