@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 // Components
 import Container from '../components/container';
@@ -12,7 +13,7 @@ import { ValidateURL, ValidateShorterId } from '../components/validations/input'
 // Integrations
 import { PostRequest } from '../integrations/api';
 
-export default class MainView extends React.Component {
+class MainView extends React.Component {
 
   constructor(props) {
     super(props);
@@ -79,8 +80,7 @@ export default class MainView extends React.Component {
 
     const { status, message, shorterUrl } = SendRequest;
     if (status === 200) {
-      //Show the success view 
-      alert('Url Created:' + shorterUrl);
+      this.props.history.push(`/success/${shorterId}`);
     } else {
       this.setState({
         error: message,
@@ -142,3 +142,5 @@ export default class MainView extends React.Component {
 
   }
 }
+
+export default withRouter(MainView);
