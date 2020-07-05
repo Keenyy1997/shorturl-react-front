@@ -17,10 +17,12 @@ export async function PostRequest(url, body, headers = {}) {
     
     const { data, message } = RequestJSON;
 
+    const shorterUrl = BASE_URL + '/' + data.identifier;
+
     return {
       status: Request.status,
       message,
-      shorterUrl: `${this.BASE_URL}/${data.identifier}`,
+      shorterUrl,
     };
   }
   else if (Request.status === 409) {
