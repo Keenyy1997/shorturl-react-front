@@ -1,22 +1,20 @@
 import React from 'react';
 
-export default class Title extends React.Component {
- 
-  render() {
+export default function TitleComponent(props){
 
-    const titleStyles = {
-      fontSize: 46,
-      fontFamily: 'Roboto',
-      textAlign: 'left',
-      color: this.props.color ?? 'black',
-    };
+  const titleStyles = {
+    fontSize: 46,
+    fontFamily: 'Roboto',
+    color: props.color ?? 'black',
+    textAlign: props.centered ? 'center' : 'left',
+  };
   
-    return (
-      <>
-        <h1 style={ titleStyles }>
-           { this.props.children ?? 'Title Example'}
-        </h1>
-      </>
-    );
-  }
+  return (
+    <>
+      <h1 style={ titleStyles }>
+         { props.children ?? 'Title Example'}
+      </h1>
+    </>
+  );
+
 }

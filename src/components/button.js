@@ -1,27 +1,31 @@
 import React from 'react';
 import ButtonValidate from './validations/button';
 
+export default function ButtonComponent(props) {
 
-export default class Button extends React.Component {
+  const state = {
+    type: props.type ?? 'default',
+    disabled: props.disabled ?? false,
+    loading: props.loading ?? false,
+  };
 
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      type: props.type ?? 'default',
-    };
+  function onClickHandler(props) {
+    if (state.disabled || state.loading) return;
+    else props.onClick();
   }
-  
-  render() {
-      
-    let styleButton = ButtonValidate(this.state);
 
-    return (
-      <>
-        <button style={styleButton}>
-          { this.props.children ?? 'Empty Button' }
-        </button>
-      </>
-    );
-  }
+  const styleButton = ButtonValidate(state);
+
+  return (
+    <>
+      <button style={styleButton} onClick={() => onClickHandler(props) }>
+        { 
+          state.loading ? 
+          <b>Loading...</b> :
+          (props.children ?? 'Empty Button')
+        }
+      </button>
+    </>
+  );
 }
+

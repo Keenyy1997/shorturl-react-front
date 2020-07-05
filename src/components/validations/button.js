@@ -31,5 +31,17 @@ export default function validateButton(props) {
 
       break;
   }
+  
+  // Disabled/Loading State
+  if (props.disabled || props.loading)
+    styles.cursor = props.disabled ? 'not-allowed' : 'progress';
+  else
+    styles.cursor = 'pointer';
+
+
+  // Disabled Color Style
+  if (props.disabled)
+    styles.opacity = '0.90';
+
   return styles;
 }
