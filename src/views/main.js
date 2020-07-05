@@ -78,7 +78,7 @@ class MainView extends React.Component {
       .catch((err) => err)
       .finally(() => { this.SetLoadingState(false) });
 
-    const { status, message, shorterUrl } = SendRequest;
+    const { status, message } = SendRequest;
     if (status === 200) {
       this.props.history.push(`/success/${shorterId}`);
     } else {
